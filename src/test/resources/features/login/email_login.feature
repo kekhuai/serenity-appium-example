@@ -1,6 +1,6 @@
 Feature: Login
 
-  Customer can login via multiple methods
+  Customer can login with username and password
 
   Scenario: Login with correct credential
     Given Natthachayakorn is on the Nextershop home page
