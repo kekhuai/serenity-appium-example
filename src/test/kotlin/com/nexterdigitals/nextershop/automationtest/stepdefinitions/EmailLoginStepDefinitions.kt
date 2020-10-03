@@ -5,10 +5,10 @@ import com.nexterdigitals.nextershop.automationtest.login.Fill
 import com.nexterdigitals.nextershop.automationtest.login.HeaderTop
 import com.nexterdigitals.nextershop.automationtest.navigation.NavigateTo
 import io.cucumber.java.Before
-import io.cucumber.java.PendingException
 import io.cucumber.java.en.Given
 import io.cucumber.java.en.Then
 import io.cucumber.java.en.When
+import net.serenitybdd.screenplay.Actor
 import net.serenitybdd.screenplay.GivenWhenThen
 import net.serenitybdd.screenplay.actors.OnStage
 import net.serenitybdd.screenplay.actors.OnlineCast
@@ -20,34 +20,34 @@ class EmailLoginStepDefinitions {
         OnStage.setTheStage(OnlineCast())
     }
 
-    @Given("^(.*) is on the Nextershop home page")
-    fun onTheNextershopHomePage(actor: String) {
-        OnStage.theActorCalled(actor).attemptsTo(NavigateTo.theNextershopHomePage())
+    @Given("{actor} is on the Nextershop home page")
+    fun onTheNextershopHomePage(actor: Actor) {
+        actor.wasAbleTo(NavigateTo.theNextershopHomePage())
     }
 
-    @Given("He goes to login page")
-    fun goesToLoginPage() {
-        OnStage.theActorInTheSpotlight().attemptsTo(NavigateTo.theNextershopLoginPage())
+    @Given("{actor} goes to login page")
+    fun goesToLoginPage(actor: Actor) {
+        actor.wasAbleTo(NavigateTo.theNextershopLoginPage())
     }
 
-    @When("He enter an email as {string}")
-    fun enterAnEmailAs(email: String) {
-        OnStage.theActorInTheSpotlight().attemptsTo(Fill.anEmailAs(email))
+    @When("{actor} enters an email as {string}")
+    fun enterAnEmailAs(actor: Actor, email: String) {
+        actor.attemptsTo(Fill.anEmailAs(email))
     }
 
-    @When("He enter a password as {string}")
-    fun enterAPasswordAs(password: String) {
-        OnStage.theActorInTheSpotlight().attemptsTo(Fill.aPasswordAs(password))
+    @When("{actor} enters a password as {string}")
+    fun enterAPasswordAs(actor: Actor, password: String) {
+        actor.attemptsTo(Fill.aPasswordAs(password))
     }
 
-    @When("He click the submit button")
-    fun clickTheSubmitButton() {
-        OnStage.theActorInTheSpotlight().attemptsTo(Click.submitButton())
+    @When("{actor} clicks the submit button")
+    fun clickTheSubmitButton(actor: Actor) {
+        actor.attemptsTo(Click.submitButton())
     }
 
-    @Then("He should be logged in as {string}")
-    fun shouldBeLoggedInAs(expectedDisplayedName: String) {
-        OnStage.theActorInTheSpotlight().should(
+    @Then("{actor} should be logged in as {string}")
+    fun shouldBeLoggedInAs(actor: Actor, expectedDisplayedName: String) {
+        actor.should(
             GivenWhenThen.seeThat(
                 "displayed name",
                 HeaderTop.displayedName(),

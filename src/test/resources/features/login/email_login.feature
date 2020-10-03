@@ -4,8 +4,8 @@ Feature: Login
 
   Scenario: Login with correct credential
     Given Natthachayakorn is on the Nextershop home page
-    And He goes to login page
-    When He enter an email as "nextershop@nextershop.com"
-    And He enter a password as "NextSh0p@12345678"
-    And He click the submit button
-    Then He should be logged in as "nextershop"
+    And he goes to login page
+    When he enters an email as "nextershop@nextershop.com"
+    And he enters a password as "NextSh0p@12345678"
+    And he clicks the submit button
+    Then he should be logged in as "nextershop"
