@@ -2,17 +2,19 @@ package com.nexterdigitals.nextershop.automationtest.stepdefinitions
 
 import com.nexterdigitals.nextershop.automationtest.login.Click
 import com.nexterdigitals.nextershop.automationtest.login.FillIn
-import com.nexterdigitals.nextershop.automationtest.login.HeaderTop
+import com.nexterdigitals.nextershop.automationtest.login.UserProfile
 import com.nexterdigitals.nextershop.automationtest.navigation.NavigateTo
 import io.cucumber.java.Before
 import io.cucumber.java.en.Given
 import io.cucumber.java.en.Then
 import io.cucumber.java.en.When
 import net.serenitybdd.screenplay.Actor
-import net.serenitybdd.screenplay.GivenWhenThen
 import net.serenitybdd.screenplay.actors.OnStage
 import net.serenitybdd.screenplay.actors.OnlineCast
-import org.hamcrest.Matchers
+import net.serenitybdd.screenplay.ensure.that
+import net.serenitybdd.screenplay.ensure.web.ElementLocated
+import net.serenitybdd.screenplay.ensure.web.TargetEnsure
+import net.serenitybdd.screenplay.targets.Target
 
 class EmailLoginStepDefinitions {
     @Before
@@ -45,14 +47,11 @@ class EmailLoginStepDefinitions {
         actor.attemptsTo(Click.submitButton())
     }
 
-    @Then("{actor} should be logged in as {string}")
-    fun shouldBeLoggedInAs(actor: Actor, expectedDisplayedName: String) {
-        actor.should(
-            GivenWhenThen.seeThat(
-                "displayed name",
-                HeaderTop.displayedName(),
-                Matchers.equalTo(expectedDisplayedName)
-            )
+    @Then("{actor} should be logged in")
+    fun shouldBeLoggedInAs(actor: Actor) {
+        actor.attemptsTo(
+            NavigateTo.theNextershopLoginPage(),
+            TargetEnsure(Target.the("sign out menu").located(UserProfile.SIGN_OUT)).isDisplayed()
         )
     }
 }

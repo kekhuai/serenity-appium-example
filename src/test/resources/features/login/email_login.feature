@@ -8,4 +8,4 @@ Feature: Login
     When he enters an email as "nextershop@nextershop.com"
     And he enters a password as "NextSh0p@12345678"
     And he clicks the submit button
-    Then he should be logged in as "nextershop"
+    Then he should be logged in
