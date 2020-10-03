@@ -5,7 +5,7 @@ import net.serenitybdd.screenplay.Task
 import net.serenitybdd.screenplay.actions.Clear
 import net.serenitybdd.screenplay.actions.Enter
 
-object Fill {
+object FillIn {
     fun anEmailAs(email: String): Performable {
         return Task.where(
             "{0} attempts to enter an email as #email",

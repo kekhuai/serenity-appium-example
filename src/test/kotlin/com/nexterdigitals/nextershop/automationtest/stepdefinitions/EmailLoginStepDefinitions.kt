@@ -1,7 +1,7 @@
 package com.nexterdigitals.nextershop.automationtest.stepdefinitions
 
 import com.nexterdigitals.nextershop.automationtest.login.Click
-import com.nexterdigitals.nextershop.automationtest.login.Fill
+import com.nexterdigitals.nextershop.automationtest.login.FillIn
 import com.nexterdigitals.nextershop.automationtest.login.HeaderTop
 import com.nexterdigitals.nextershop.automationtest.navigation.NavigateTo
 import io.cucumber.java.Before
@@ -32,12 +32,12 @@ class EmailLoginStepDefinitions {
 
     @When("{actor} enters an email as {string}")
     fun enterAnEmailAs(actor: Actor, email: String) {
-        actor.attemptsTo(Fill.anEmailAs(email))
+        actor.attemptsTo(FillIn.anEmailAs(email))
     }
 
     @When("{actor} enters a password as {string}")
     fun enterAPasswordAs(actor: Actor, password: String) {
-        actor.attemptsTo(Fill.aPasswordAs(password))
+        actor.attemptsTo(FillIn.aPasswordAs(password))
     }
 
     @When("{actor} clicks the submit button")
