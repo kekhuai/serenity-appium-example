@@ -1,18 +1,16 @@
 package com.nexterdigitals.nextershop.automationtest.stepdefinitions
 
-import com.nexterdigitals.nextershop.automationtest.login.Click
-import com.nexterdigitals.nextershop.automationtest.login.FillIn
-import com.nexterdigitals.nextershop.automationtest.login.UserProfile
+import com.nexterdigitals.nextershop.automationtest.login.*
+import com.nexterdigitals.nextershop.automationtest.login.LoginForm
 import com.nexterdigitals.nextershop.automationtest.navigation.NavigateTo
 import io.cucumber.java.Before
 import io.cucumber.java.en.Given
 import io.cucumber.java.en.Then
 import io.cucumber.java.en.When
 import net.serenitybdd.screenplay.Actor
+import net.serenitybdd.screenplay.actions.Scroll
 import net.serenitybdd.screenplay.actors.OnStage
 import net.serenitybdd.screenplay.actors.OnlineCast
-import net.serenitybdd.screenplay.ensure.that
-import net.serenitybdd.screenplay.ensure.web.ElementLocated
 import net.serenitybdd.screenplay.ensure.web.TargetEnsure
 import net.serenitybdd.screenplay.targets.Target
 
@@ -44,6 +42,7 @@ class EmailLoginStepDefinitions {
 
     @When("{actor} clicks the submit button")
     fun clickTheSubmitButton(actor: Actor) {
+        actor.attemptsTo(Scroll.to(LoginForm.SUBMIT_BUTTON))
         actor.attemptsTo(Click.submitButton())
     }
 
