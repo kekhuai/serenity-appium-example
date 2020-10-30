@@ -42,7 +42,6 @@ class EmailLoginStepDefinitions {
 
     @When("{actor} clicks the submit button")
     fun clickTheSubmitButton(actor: Actor) {
-        actor.attemptsTo(Scroll.to(LoginForm.SUBMIT_BUTTON))
         actor.attemptsTo(Click.submitButton())
     }
 

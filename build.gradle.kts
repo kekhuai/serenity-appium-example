@@ -39,6 +39,7 @@ dependencies {
     testImplementation("net.serenity-bdd:serenity-screenplay:$serenityCoreVersion")
     testImplementation("net.serenity-bdd:serenity-screenplay-webdriver:$serenityCoreVersion")
     testImplementation("net.serenity-bdd:serenity-ensure:$serenityCoreVersion")
+    testImplementation("net.serenity-bdd:serenity-browserstack:$serenityCoreVersion")
     testImplementation("junit:junit:$junitVersion")
     testImplementation("org.assertj:assertj-core:$assertJVersion")
 }
