@@ -1,7 +1,8 @@
 package com.nexterdigitals.nextershop.automationtest.login
 
+import net.serenitybdd.screenplay.targets.Target
 import org.openqa.selenium.By
 
 object UserProfile {
-    val SIGN_OUT: By = By.cssSelector("#wrapper > div.container > div > div > div.col-lg-3 > div > div.card-body > div > div > div.user-signout")
+    val SIGN_OUT: Target = Target.the("sign out menu").located(By.cssSelector(".user-signout"))
 }

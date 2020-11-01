@@ -1,6 +1,5 @@
 package com.nexterdigitals.nextershop.automationtest.navigation
 
-import com.nexterdigitals.nextershop.automationtest.common.DailyPopup
 import com.nexterdigitals.nextershop.automationtest.common.HeaderTop
 import net.serenitybdd.screenplay.Performable
 import net.serenitybdd.screenplay.Task
@@ -11,8 +10,7 @@ object NavigateTo {
     fun theNextershopHomePage(): Performable {
         return Task.where(
             "{0} opens the Nextershop home page",
-            Open.browserOn().the(NextershopHomePage::class.java),
-            Click.on(DailyPopup.CLOSE)
+            Open.browserOn().the(NextershopHomePage::class.java)
         )
     }
 
