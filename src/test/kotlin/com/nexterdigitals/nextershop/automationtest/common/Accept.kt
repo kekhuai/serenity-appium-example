@@ -5,11 +5,11 @@ import net.serenitybdd.screenplay.Task
 import net.serenitybdd.screenplay.actions.Click
 import java.time.Duration
 
-object Close {
-    fun thePopup(): Performable {
+object Accept {
+    fun allCookies(): Performable {
         return Task.where(
-            "{0} attempts to close the popup",
-            Click.on(DailyPopup.CLOSE_BUTTON.waitingForNoMoreThan(Duration.ofMinutes(1)))
+            "{0} tries to accept all cookies",
+            Click.on(OneTrust.ACCEPT_ALL_BUTTON.waitingForNoMoreThan(Duration.ofMinutes(1)))
         )
     }
 }

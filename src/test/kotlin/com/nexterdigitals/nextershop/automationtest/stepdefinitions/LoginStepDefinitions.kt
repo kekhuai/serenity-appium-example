@@ -1,41 +1,18 @@
 package com.nexterdigitals.nextershop.automationtest.stepdefinitions
 
-import com.nexterdigitals.nextershop.automationtest.common.Close
 import com.nexterdigitals.nextershop.automationtest.login.Click
 import com.nexterdigitals.nextershop.automationtest.login.FillIn
 import com.nexterdigitals.nextershop.automationtest.login.LoginForm
 import com.nexterdigitals.nextershop.automationtest.login.UserProfile
 import com.nexterdigitals.nextershop.automationtest.navigation.NavigateTo
-import io.cucumber.java.Before
 import io.cucumber.java.en.Given
 import io.cucumber.java.en.Then
 import io.cucumber.java.en.When
 import net.serenitybdd.screenplay.Actor
-import net.serenitybdd.screenplay.actors.OnStage
-import net.serenitybdd.screenplay.actors.OnlineCast
 import net.serenitybdd.screenplay.ensure.web.TargetEnsure
 import java.time.Duration
 
-class EmailLoginStepDefinitions {
-    @Before
-    fun setTheStage() {
-        OnStage.setTheStage(OnlineCast())
-    }
-
-    @Given("{actor} is on the Nextershop home page")
-    fun onTheNextershopHomePage(actor: Actor) {
-        actor.wasAbleTo(NavigateTo.theNextershopHomePage())
-    }
-
-    @Given("{actor} tries to close the popup if there is any")
-    fun closeThePopup(actor: Actor) {
-        try {
-            actor.attemptsTo(Close.thePopup())
-        } catch (e: Exception) {
-            // explicit swallow exception
-        }
-    }
-
+class LoginStepDefinitions {
     @Given("{actor} goes to login page")
     fun goesToLoginPage(actor: Actor) {
         actor.wasAbleTo(NavigateTo.theNextershopLoginPage())

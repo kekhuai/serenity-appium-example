@@ -3,13 +3,12 @@ package com.nexterdigitals.nextershop.automationtest.common
 import net.serenitybdd.screenplay.Performable
 import net.serenitybdd.screenplay.Task
 import net.serenitybdd.screenplay.actions.Click
-import java.time.Duration
 
-object Close {
-    fun thePopup(): Performable {
+object Open {
+    fun theHamburgerMenu(): Performable {
         return Task.where(
-            "{0} attempts to close the popup",
-            Click.on(DailyPopup.CLOSE_BUTTON.waitingForNoMoreThan(Duration.ofMinutes(1)))
+            "{0} attempts to open the hamburger menu",
+            Click.on(HeaderMiddle.HAMBURGER_MENU)
         )
     }
 }
