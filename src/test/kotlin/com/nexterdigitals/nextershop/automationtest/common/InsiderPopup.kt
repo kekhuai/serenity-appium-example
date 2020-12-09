@@ -4,9 +4,9 @@ import net.serenitybdd.screenplay.targets.Target
 import org.openqa.selenium.By
 import java.time.Duration
 
-object OneTrust {
-    val ACCEPT_ALL_BUTTON: Target = Target
-        .the("OneTrust accept all button")
-        .located(By.cssSelector("button#onetrust-accept-btn-handler"))
+object InsiderPopup {
+    val CLOSE_BUTTON: Target = Target
+        .the("close button")
+        .located(By.xpath("//div[contains(@id, 'wrap-close-button')]"))
         .waitingForNoMoreThan(Duration.ofMinutes(1))
 }

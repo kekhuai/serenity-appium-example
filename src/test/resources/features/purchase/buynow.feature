@@ -13,11 +13,6 @@ Feature: Buy now
     And he select "ปูนซีเมนต์ อิฐมวลเบา อิฐบล็อก คานทับหลัง" category
     And he select "ปูนซีเมนต์สำเร็จรูป" sub-category
     And he select "ปูนเสือ มอร์ตาร์ ฉาบทั่วไปแพลทินัมXpert 50กก." product
-#    And he select "กรุงเทพมหานคร" province
-#    And he select "พระนคร" district
-#    And he select "พระบรมมหาราชวัง" sub-district
-#    And he select "10200" post code
-#    And he selects his first shipping address
     And he tries to check the stock
     And he add the product to cart
     And he goes to cart page

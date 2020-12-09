@@ -1,19 +1,14 @@
 package com.nexterdigitals.nextershop.automationtest.stepdefinitions
 
 import com.nexterdigitals.nextershop.automationtest.common.Close
-import com.nexterdigitals.nextershop.automationtest.common.CloseThePopup
 import com.nexterdigitals.nextershop.automationtest.navigation.NavigateTo
 import io.cucumber.java.Before
 import io.cucumber.java.en.Given
 import net.serenitybdd.screenplay.Actor
 import net.serenitybdd.screenplay.actors.OnStage
 import net.serenitybdd.screenplay.actors.OnlineCast
-import net.thucydides.core.annotations.Steps
 
 class StepDefinitions {
-//    @Steps
-//    private lateinit var closeThePopup: CloseThePopup
-
     @Before
     fun setTheStage() {
         OnStage.setTheStage(OnlineCast())
